@@ -1,7 +1,7 @@
-near-blank-project
+proxy-contract-example
 ==================
 
-This app was initialized with [create-near-app]
+This repo shows how to develop a proxy contract using the new near-sdk-js.
 
 
 Quick Start
