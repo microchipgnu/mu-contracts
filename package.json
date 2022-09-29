@@ -1,0 +1,20 @@
+{
+  "name": "proxies",
+  "version": "1.0.0",
+  "description": "This repo contains some contract examples using the new near-sdk-js.",
+  "main": "index.js",
+  "scripts": {
+    "cleanup": "./delete-all-node-modules.sh",
+    "init": "cd contracts && npm i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microchipgnu/proxy-contract-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/microchipgnu/proxy-contract-example/issues"
+  },
+  "homepage": "https://github.com/microchipgnu/proxy-contract-example#readme"
+}
