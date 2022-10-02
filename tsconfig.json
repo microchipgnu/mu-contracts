@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es5",
+    "noEmit": true,
+    "declaration": true
+  },
+  "exclude": ["node_modules"]
+}

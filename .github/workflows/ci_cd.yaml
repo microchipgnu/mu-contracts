@@ -1,0 +1,23 @@
+name: CI Pipeline
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - run: npx lerna bootstrap --no-ci --force-local
+      - run: npm run lint
+      - run: npm run build
+      - run: npm run test
+
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: write

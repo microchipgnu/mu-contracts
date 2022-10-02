@@ -1,0 +1,24 @@
+{
+  "name": "@microlabs/tests",
+  "version": "0.0.1",
+  "license": "(MIT AND Apache-2.0)",
+  "scripts": {
+    "build": "",
+    "deploy": "",
+    "test": "ava"
+  },
+  "dependencies": {
+    "near-cli": "^3.4.0",
+    "near-sdk-js": "0.5.0"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.0",
+    "@types/node": "^18.6.2",
+    "ava": "^4.2.0",
+    "near-cli": "^3.3.0",
+    "near-workspaces": "^3.2.1",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2",
+    "zx": "^7.0.8"
+  }
+}
