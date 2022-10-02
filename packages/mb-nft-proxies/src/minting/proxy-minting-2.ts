@@ -9,16 +9,13 @@ import {
   view,
 } from "near-sdk-js";
 import { AccountId } from "near-sdk-js/lib/types";
-import Ownable from "../../../contracts/access/Ownable";
 
 @NearBindgen({ requireInit: false })
-class Proxy3 extends Ownable {
+class Proxy3 {
   initial_hour: number;
   threshold: number;
 
   constructor() {
-    super();
-
     const unix_epoch_sec = Math.floor(
       Number(near.blockTimestamp() / BigInt(1000000000))
     );
@@ -29,13 +26,13 @@ class Proxy3 extends Ownable {
 
   @call({})
   set_initial_hour({ hour }: { hour: number }) {
-    this.is_owner({ address: near.signerAccountId() });
+    // this.is_owner({ address: near.signerAccountId() });
     this.initial_hour = hour;
   }
 
   @call({})
   set_threshold({ threshold }: { threshold: number }) {
-    this.is_owner({ address: near.signerAccountId() });
+    // this.is_owner({ address: near.signerAccountId() });
 
     this.threshold = threshold;
   }

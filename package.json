@@ -1,20 +1,28 @@
 {
-  "name": "proxies",
-  "version": "1.0.0",
+  "name": "xyz-ideas",
+  "version": "0.0.1",
   "description": "This repo contains some contract examples using the new near-sdk-js.",
-  "main": "index.js",
   "scripts": {
     "cleanup": "./delete-all-node-modules.sh",
-    "init": "cd contracts && npm i"
+    "init": "cd contracts && npm i",
+    "build": "lerna run build",
+    "dev": "lerna run dev",
+    "lint": "lerna run lint",
+    "test": "lerna run test --stream"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/microchipgnu/proxy-contract-example.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "@microchipgnu",
   "bugs": {
     "url": "https://github.com/microchipgnu/proxy-contract-example/issues"
   },
-  "homepage": "https://github.com/microchipgnu/proxy-contract-example#readme"
+  "homepage": "https://github.com/microchipgnu/proxy-contract-example#readme",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^5.5.4"
+  }
 }

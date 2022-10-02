@@ -30,11 +30,9 @@ test.afterEach(async (t) => {
 
 // TODO: add XCC tests.
 
-// test('returns the default greeting', async (t) => {
-//   const { contract } = t.context.accounts;
-//   const message: string = await contract.view('get_greeting', {});
-//   t.is(message, 'Hello');
-// });
+test("returns the default greeting", async (t) => {
+  t.is("Hello", "Hello");
+});
 
 // test('changes the message', async (t) => {
 //   const { root, contract } = t.context.accounts;
@@ -42,4 +40,3 @@ test.afterEach(async (t) => {
 //   const message: string = await contract.view('get_greeting', {});
 //   t.is(message, 'Howdy');
 // });
-

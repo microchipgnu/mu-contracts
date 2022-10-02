@@ -11,11 +11,11 @@ import { AccountId } from "near-sdk-js/lib/types";
 // This is a proxy contract that aims to mint non-fungible tokens
 // on Mintbase NFT contracts on behalf of users.
 // This contract also creates a LookupMap to keep track of the latest minter.
-// This way whenever there is a new minted token for a certain NFT contract, 
+// This way whenever there is a new minted token for a certain NFT contract,
 // the previous minter will become its owner.
 
-// Mintbase contracts follow a role-based permission system in which `minters` 
-// are only allowed to mint on the contract. This contract opens up the Mintbase 
+// Mintbase contracts follow a role-based permission system in which `minters`
+// are only allowed to mint on the contract. This contract opens up the Mintbase
 // contract for minting by simply granting this contract's as a minter.
 @NearBindgen({ requireInit: false })
 class Proxy2 {
@@ -26,7 +26,7 @@ class Proxy2 {
     this.latest_minters = new LookupMap("latest-minters-map");
   }
 
-  // Public minting method. 
+  // Public minting method.
   // `reference` is generally an Arweave transaction hash. This is commonly used by Mintbase.
   // `nft_contract_id` is the Mintbase NFT contract address.
   @call({})
