@@ -1,5 +1,5 @@
 {
-  "name": "@microlabs/mb-nft-proxies-test",
+  "name": "@microlabs/tests",
   "version": "0.0.1",
   "license": "(MIT AND Apache-2.0)",
   "scripts": {
