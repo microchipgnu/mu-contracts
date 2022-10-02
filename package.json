@@ -2,6 +2,7 @@
   "name": "@microlabs/root",
   "description": "This repo contains some contract examples using the new near-sdk-js.",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "lerna run build",
     "dev": "lerna run dev",
@@ -21,6 +22,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "^5.5.4"
+    "lerna": "^5.5.4",
+    "near-sdk-js": "0.5.0"
   }
 }

@@ -9,7 +9,6 @@ import {
   view,
 } from "near-sdk-js";
 import { AccountId } from "near-sdk-js/lib/types";
-
 @NearBindgen({ requireInit: false })
 class Proxy3 {
   initial_hour: number;
