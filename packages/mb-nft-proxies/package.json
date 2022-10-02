@@ -1,5 +1,5 @@
 {
-  "name": "mb-nft-proxies",
+  "name": "@microlabs/mb-nft-proxies",
   "version": "0.0.1",
   "license": "(MIT AND Apache-2.0)",
   "scripts": {
@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "near-cli": "^3.4.0",
-    "near-sdk-js": "0.5.0"
+    "near-sdk-js": "0.5.0",
+    "@microlabs/helpers": "0.0.1"
   },
   "devDependencies": {
     "@types/bn.js": "^5.1.0",

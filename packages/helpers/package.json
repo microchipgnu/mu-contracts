@@ -1,5 +1,5 @@
 {
-  "name": "helpers",
+  "name": "@microlabs/helpers",
   "version": "0.0.1",
   "license": "(MIT AND Apache-2.0)",
   "type": "module",

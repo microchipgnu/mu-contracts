@@ -1,10 +1,8 @@
 {
-  "name": "xyz-ideas",
-  "version": "0.0.1",
+  "name": "@microlabs/root",
   "description": "This repo contains some contract examples using the new near-sdk-js.",
+  "private": true,
   "scripts": {
-    "cleanup": "./delete-all-node-modules.sh",
-    "init": "cd contracts && npm i",
     "build": "lerna run build",
     "dev": "lerna run dev",
     "lint": "lerna run lint",
