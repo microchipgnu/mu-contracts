@@ -1,5 +1,7 @@
-import { near, call, view, assert } from "near-sdk-js";
+import { near, call, view, assert, NearBindgen } from "near-sdk-js";
 import { AccountId } from "near-sdk-js/lib/types";
+
+@NearBindgen({ requireInit: false })
 class Ownable {
   owner: AccountId;
 
@@ -17,9 +19,9 @@ class Ownable {
     this.owner = address;
   }
 
-  @view({})
+  @call({})
   is_owner({ address }: { address: AccountId }) {
-    assert(address === this.owner, "Address is not owner.");
+    assert(address === this.get_owner(), "Address is not owner.");
   }
 
   @view({})
