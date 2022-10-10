@@ -5,7 +5,8 @@
     "moduleResolution": "node",
     "noEmit": true,
     "outDir": "build",
-    "declarationMap": true
+    "declarationMap": true,
+    "declaration": true
   },
   "exclude": ["node_modules"],
   "include": ["src/**/*"]
