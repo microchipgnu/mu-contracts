@@ -2,10 +2,10 @@
   "compilerOptions": {
     "experimentalDecorators": true,
     "target": "es5",
-    "noEmit": true,
-    "declaration": true
+    "declaration": true,
+    "outDir": "build",
+    "declarationMap": true
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"]
 }

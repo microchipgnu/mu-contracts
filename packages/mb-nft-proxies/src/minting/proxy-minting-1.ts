@@ -18,7 +18,7 @@ import { AccountId } from "near-sdk-js/lib/types";
 // are only allowed to mint on the contract. This contract opens up the Mintbase
 // contract for minting by simply granting this contract's as a minter.
 @NearBindgen({ requireInit: false })
-class Proxy2 {
+class Proxy1 {
   // @ts-ignore
   latest_minters: LookupMap<AccountId>;
 

@@ -19,4 +19,6 @@ function applyMixins(derivedCtor: any, constructors: any[]) {
   });
 }
 
-export { Mixer, applyMixins };
+const Mixin = Mixer.Mixin;
+
+export { Mixer, applyMixins, Mixin };

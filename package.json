@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "lerna run build",
+    "build": "rm -rf build/ && lerna run build",
     "dev": "lerna run dev",
     "lint": "lerna run lint",
     "test": "lerna run test --stream"

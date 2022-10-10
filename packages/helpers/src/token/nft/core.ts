@@ -1,6 +1,5 @@
 import { call, LookupMap, NearBindgen, view, near } from "near-sdk-js";
 import { AccountId } from "near-sdk-js/lib/types";
-import { event_json } from "./events";
 import { TokenMetadata, ContractMetadata } from "./types";
 
 const tokens_map_key = "t";
@@ -70,16 +69,6 @@ class NftContract {
   }) {
     const token = new Token({ token_id, owner_id, metadata });
     this.tokens.set(token_id, token);
-
-    event_json({
-      data: [
-        {
-          owner_id: owner_id,
-          token_ids: [token_id],
-        },
-      ],
-      event: "nft_mint",
-    });
   }
 
   @view({})
