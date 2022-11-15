@@ -1,7 +1,5 @@
 import { LookupMap, near } from "near-sdk-js";
 import { AccountId } from "near-sdk-js/lib/types";
-import { Mixin } from "../../utils/Mixer";
-import Ownable from "../Ownable";
 import { RoleGrantedLog } from "./events";
 
 type RoleId = string;
@@ -10,7 +8,7 @@ type RoleArgs = {
   adminRoleId: string;
 };
 
-const DEFAULT_ADMIN_ROLE_ID = "";
+const DEFAULT_ADMIN_ROLE_ID = "su";
 
 class Role {
   id: string;

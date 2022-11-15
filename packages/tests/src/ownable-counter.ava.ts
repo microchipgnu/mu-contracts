@@ -21,6 +21,10 @@ test.beforeEach(async (t) => {
   const ali = await root.createSubAccount("ali");
   const bob = await root.createSubAccount("bob");
 
+  const log = await root.call(contract, "init", {
+    owner: "bob.test.near",
+  });
+
   // Save state for test runs, it is unique for each test
   t.context.worker = worker;
   t.context.accounts = { root, contract, ali, bob };
@@ -33,17 +37,11 @@ test.afterEach(async (t) => {
   });
 });
 
-// test("Initial count is 0", async (t) => {
-//   const { contract } = t.context.accounts;
-//   const result = await contract.view("getCount", {});
-//   t.is(result, 0);
-// });
-
 test("Increase works", async (t) => {
   const { contract, ali, root, bob } = t.context.accounts;
-  await root.call(contract, "increase", {});
 
-  // await bob.call(contract, "increase", { n: 4 });
-  // result = await contract.view("getCount", {});
-  t.is(5, 5);
+  let result = await contract.view("get_count", {});
+  t.is(result, 0);
+
+  await bob.call(contract, "increase", { n: 4 });
 });

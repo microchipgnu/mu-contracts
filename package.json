@@ -7,7 +7,9 @@
     "build": "rm -rf build/ && lerna run build",
     "dev": "lerna run dev",
     "lint": "lerna run lint",
-    "test": "lerna run test --stream"
+    "test": "lerna run test --stream",
+    "build:examples": "lerna run build --scope @microlabs/examples",
+    "build:helpers": "lerna run build --scope @microlabs/helpers"
   },
   "repository": {
     "type": "git",

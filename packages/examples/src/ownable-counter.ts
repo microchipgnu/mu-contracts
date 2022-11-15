@@ -1,29 +1,32 @@
-import { NearBindgen, near, call, view } from "near-sdk-js";
+import { NearBindgen, near, call, view, assert, initialize } from "near-sdk-js";
 import { isUndefined } from "lodash-es";
-import { Ownable } from "@microlabs/helpers";
+import { Mixin, Ownable, Pausable } from "@microlabs/helpers";
 import { AccountId } from "near-sdk-js/lib/types";
 
-
-@NearBindgen({})
-export class Counter extends Ownable {
+@NearBindgen({ requireInit: true })
+export class Counter {
   count = 0;
+  ownable: Ownable;
 
-  constructor() {
-    super();
+  @initialize({})
+  init({ owner }: { owner: AccountId }) {
+    this.ownable = new Ownable({ owner: owner });
+
+    near.log(this.ownable)
   }
 
   @call({})
   increase({ n = 1 }: { n: number }) {
-    this.is_owner({ address: near.signerAccountId() });
+    const is_owner = this.ownable.is_owner({ address: near.signerAccountId() });
 
-    near.log(near.signerAccountId());
+    assert(is_owner === true, "NOT OWNER");
+
     this.count += n;
     near.log(`Counter increased to ${this.count}`);
   }
 
   @call({})
   decrease({ n }: { n: number }) {
-    this.is_owner({ address: near.signerAccountId() });
     // you can use default argument `n=1` too
     // this is to illustrate a npm dependency: lodash can be used
     if (isUndefined(n)) {
@@ -36,12 +39,7 @@ export class Counter extends Ownable {
   }
 
   @view({})
-  get_owner(): AccountId {
-    return this.owner;
-  }
-
-  @view({})
-  getCount(): number {
+  get_count(): number {
     return this.count;
   }
 }

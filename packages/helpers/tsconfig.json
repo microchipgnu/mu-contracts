@@ -3,7 +3,7 @@
     "experimentalDecorators": true,
     "target": "es2020",
     "moduleResolution": "node",
-    "noEmit": true,
+    "noEmit": false,
     "outDir": "build",
     "declarationMap": true,
     "declaration": true
